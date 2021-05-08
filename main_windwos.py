@@ -8,10 +8,29 @@ from subprocess import PIPE
 from subprocess import Popen
 from requests import post
 
+def SecretMenu():
+    aaa = input("Are you sure you want to enter secret menu?>")
+    if aaa == "n":
+        MainMenu()
+        exit()
+    elif aaa == "y":
+        print('''Welcome to Secret Menu
+        Please enter debug commands:''')
+        aab == input(">>>")
+    else:
+        print("Wrong operation, please try again!")
+        sleep(2)
+        MainMenu()
+
+
+
+
+
+
 # The most important global variables
 ans1 = 0
 ans2 = 0
-
+aab = ""
 # Here comes the arguments like "--version" or "--help"
 argumentList = argv[1:]
  
@@ -346,6 +365,8 @@ def MainMenu():
             MainMenu()
         elif ans1 == "4": 
             calculator()
+        elif ans1 == "debug":
+            SecretMenu()
         elif ans1 == "7":
             print("Starting client")
             sleep(3)
